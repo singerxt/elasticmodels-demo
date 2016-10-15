@@ -1,0 +1,33 @@
+{
+  "name": "GameCatalog",
+  "description": "Simple Expres App",
+  "version": "0.0.1",
+  "private": false,
+  "author": "Mateusz Śpiewak",
+  "homepage": "",
+  "contributors": [
+    ""
+  ],
+  "bugs": {
+    "url": ""
+  },
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "elasticsearch": "^11.0.1",
+    "express": "^4.14.0",
+    "winston": "^2.2.0",
+    "ElasticModels": "*"
+  },
+  "devDependencies": {
+    "eslint": "^3.8.0",
+    "eslint-config-standard": "^6.2.0",
+    "eslint-plugin-promise": "^3.0.0",
+    "eslint-plugin-standard": "^2.0.1"
+  },
+  "keywords": [],
+  "repository": "none",
+  "license": "MIT"
+}

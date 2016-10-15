@@ -1,9 +1,19 @@
 'use strict'
 
-const sendResponse = (state) => ({
-  sendResponse: (data) => state.res.send(data)
+const sendResponse = ({ res }) => ({
+  sendResponse: data => res.send(data)
+})
+
+const sendError = ({ res }) => ({
+  sendError: e => res.send(e)
+})
+
+const createPagination = (state) => ({
+  createPagination: data => ({})
 })
 
 module.exports = {
-  sendResponse
+  sendResponse,
+  createPagination,
+  sendError,
 }

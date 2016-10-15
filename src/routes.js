@@ -2,10 +2,8 @@
 
 const router = require('express').Router()
 const { games } = require('./models')
-router.get('/games', (req, res, next) => {
-  games.find().then(documents => documents.getDocuments()).then((result) => {
-    res.send(result)
-  })
-})
+const gamesController = require('./controllers/games')
+
+router.get('/games', (req, res, next) => gamesController(req, res, next).handleRequest())
 
 module.exports = router

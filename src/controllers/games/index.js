@@ -2,7 +2,7 @@
 const { sendResponse, sendError } = require('../common')
 const { games } = require('../../models')
 
-const handleRequest = ({ sendResponsem, sendError }) => ({
+const handleRequest = ({ sendResponse, sendError }) => ({
   handleRequest: () => games.find()
     .then(docs => docs.getDocuments())
     .then(sendResponse)

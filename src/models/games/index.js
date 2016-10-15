@@ -2,8 +2,22 @@
 
 const { schema, dataTypes } = require('../baseModel')
 const { string, double } = dataTypes
+const { basePath } = require('../../config')
 
 const games = schema('games', {
+  '@context': {
+    type: string,
+    translation: () => 'http://schema.org'
+  },
+  '@type': {
+    type: string,
+    translation: () => 'Game'
+  },
+  '@id': {
+    type: string,
+    dependencies: ['_id'],
+    translation: (id) => `${basePath}/games/${id}`
+  },
   id: {
     translation: '_id',
     type: string

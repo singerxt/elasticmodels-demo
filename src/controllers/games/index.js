@@ -1,9 +1,12 @@
 'use strict'
-const { sendResponse } = require('../common')
+const { sendResponse, sendError } = require('../common')
 const { games } = require('../../models')
 
-const handleRequest = ({ sendResponse }) => ({
-  handleRequest: () => games.find().then(docs => docs.getDocuments()).then(sendResponse).catch()
+const handleRequest = ({ sendResponsem, sendError }) => ({
+  handleRequest: () => games.find()
+    .then(docs => docs.getDocuments())
+    .then(sendResponse)
+    .catch(sendError)
 })
 
 const gamesController = (req, res, next) => {
@@ -11,7 +14,8 @@ const gamesController = (req, res, next) => {
     req,
     res,
     next,
-    sendResponse: sendResponse({ req, res, next }).sendResponse
+    sendResponse: sendResponse({ req, res, next }).sendResponse,
+    sendError: sendError({ req, res, next }).sendError
   }
 
   return Object.assign(

@@ -48,7 +48,17 @@ const games = schema('games', {
     type: double
   }
 }, {
-  index: 'games'
+  index: 'games',
+  collectionHeader: (options) => ({
+    '@context': 'http://schema.org',
+    '@type': 'Collection'
+  }),
+  collectionFooter: (options) => ({
+    first: '',
+    next: '',
+    last: ''
+  }),
+  documentsIn: 'members'
 })
 
 module.exports = games

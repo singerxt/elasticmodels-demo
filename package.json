@@ -12,7 +12,7 @@
     "url": ""
   },
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "babel-watch index.js"
   },
   "dependencies": {
     "bluebird": "^3.4.6",
@@ -22,6 +22,10 @@
     "ElasticModels": "*"
   },
   "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.18.0",
+    "babel-preset-stage-3": "^6.17.0",
+    "babel-watch": "^2.0.4",
     "eslint": "^3.8.0",
     "eslint-config-standard": "^6.2.0",
     "eslint-plugin-promise": "^3.0.0",

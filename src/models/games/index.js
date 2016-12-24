@@ -49,7 +49,7 @@ const games = schema('games', {
   }
 }, {
   index: 'games',
-  collectionHeader: (options) => ({
+  collectionHeader: (options) => console.log(options.rawData) || ({
     '@context': 'http://schema.org',
     '@type': 'Collection'
   }),
@@ -58,7 +58,7 @@ const games = schema('games', {
     next: '',
     last: ''
   }),
-  documentsIn: 'members'
+  wrapDocumentIn: 'members'
 })
 
 module.exports = games

@@ -3,6 +3,7 @@
 const { schema, dataTypes } = require('../baseModel')
 const { string, double } = dataTypes
 const { basePath } = require('../../config')
+const R = require('Ramda')
 
 const games = schema('games', {
   '@context': {
@@ -49,9 +50,13 @@ const games = schema('games', {
   }
 }, {
   index: 'games',
-  collectionHeader: (options) => console.log(options.rawData) || ({
+  collectionHeader: (options) => ({
     '@context': 'http://schema.org',
-    '@type': 'Collection'
+    '@type': 'Collection',
+    totalCount: R.view(
+      R.lensPath(['rawData', 'hits', 'total']),
+      options
+    )
   }),
   collectionFooter: (options) => ({
     first: '',

@@ -15,11 +15,12 @@
     "start": "babel-watch index.js"
   },
   "dependencies": {
+    "ElasticModels": "*",
     "bluebird": "^3.4.6",
     "elasticsearch": "^11.0.1",
     "express": "^4.14.0",
-    "winston": "^2.2.0",
-    "ElasticModels": "*"
+    "ramda": "^0.22.1",
+    "winston": "^2.2.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
